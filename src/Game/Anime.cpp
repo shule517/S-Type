@@ -1,39 +1,22 @@
 #include "StdAfx.h"
 #include "Anime.h"
 
-Frame Anime::GetFrame(MSXML2::IXMLDOMElementPtr pRoot)
+/*-------------------------------------------
+	コンストラクタ
+	引数：読む込むAnime(XML)ファイルパス
+--------------------------------------------*/
+Anime::Anime(char* file_name)
+:isMirror(false), animeNo(0), count(0)
 {
-	//char data[256];
-
-	//sprintf(data, "image= %s x = %d w = %d", toStr(pRoot->getAttribute("image").bstrVal), _wtoi(pRoot->getAttribute("x").bstrVal), _wtoi(pRoot->getAttribute("w").bstrVal));
-	//MessageBox(0, data, 0, 0);
-
-
-	Frame frame;
-	frame.imagePath = toStr(pRoot->getAttribute("image").bstrVal);
-	//frame.soundPath = toStr(pRoot->getAttribute("image").bstrVal);
-	frame.x = toInt(pRoot->getAttribute("x").bstrVal);
-	frame.y = toInt(pRoot->getAttribute("y").bstrVal);
-	frame.w = toInt(pRoot->getAttribute("w").bstrVal);
-	frame.h = toInt(pRoot->getAttribute("h").bstrVal);
-	frame.gap = toInt(pRoot->getAttribute("gap").bstrVal);
-
-	return frame;
+	// XML読み込み
+	ReadXML(file_name);
 }
 
-FrameList Anime::GetAnimation(MSXML2::IXMLDOMElementPtr pRoot)
+/*-------------------------------------------
+	デストラクタ
+--------------------------------------------*/
+Anime::~Anime()
 {
-	MSXML2::IXMLDOMNodeListPtr pList = pRoot->selectNodes("frame");
-
-	FrameList frameList;
-
-	for (int i = 0; i < pList->length; i++)
-	{
-		Frame frame = GetFrame(pList->item[i]);
-		frameList.push_back(frame);
-	}
-
-	return frameList;
 }
 
 bool Anime::ReadXML(char* file_name)
@@ -143,27 +126,54 @@ bool Anime::ReadXML(char* file_name)
 
 	return true;
 }
-
-Anime::Anime(char* file_name)
+/*-------------------------------------------
+	
+--------------------------------------------*/
+Frame Anime::GetFrame(MSXML2::IXMLDOMElementPtr pRoot)
 {
-	isMirror = false;
-	animeNo = 0;
-	count = 0;
+	Frame frame;
+	frame.imagePath = toStr(pRoot->getAttribute("image").bstrVal);
+	frame.x = toInt(pRoot->getAttribute("x").bstrVal);
+	frame.y = toInt(pRoot->getAttribute("y").bstrVal);
+	frame.w = toInt(pRoot->getAttribute("w").bstrVal);
+	frame.h = toInt(pRoot->getAttribute("h").bstrVal);
+	frame.gap = toInt(pRoot->getAttribute("gap").bstrVal);
 
-	ReadXML(file_name);
+	// TODO 音声の指定も行えるようにしたい
+	//frame.soundPath = toStr(pRoot->getAttribute("image").bstrVal);
+
+	return frame;
 }
 
-Anime::~Anime(void)
+/*-------------------------------------------
+
+--------------------------------------------*/
+FrameList Anime::GetAnimation(MSXML2::IXMLDOMElementPtr pRoot)
 {
+	MSXML2::IXMLDOMNodeListPtr pList = pRoot->selectNodes("frame");
+
+	FrameList frameList;
+
+	for (int i = 0; i < pList->length; i++)
+	{
+		Frame frame = GetFrame(pList->item[i]);
+		frameList.push_back(frame);
+	}
+
+	return frameList;
 }
 
-void Anime::Draw(int x, int y)
+/*-------------------------------------------
+	アニメーション描画
+	引数：x:X座標, y:Y座標
+--------------------------------------------*/
+void Anime::Draw(long x, long y)
 {
 	FrameList frameList = animation[animeNo % animation.size()];
 
 	if (frameList.size() > 0)
 	{
-		Frame frame = frameList.at((int)count % frameList.size());
+		Frame frame = frameList.at((long)count % frameList.size());
 		count += frame.gap / 60.0f;
 	
 		RECT rect = { frame.x, frame.y, frame.x + frame.w, frame.y + frame.h };

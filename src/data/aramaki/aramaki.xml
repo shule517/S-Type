@@ -1,0 +1,15 @@
+﻿<object action="a.lua" animationNum="2">
+	
+	<!--アニメーションの定義-->
+
+	<!--落下-->
+	<animation id="0">
+		<frame image="data/aramaki/aramaki01.bmp" gap="0" x="0" y="0" w="128" h="64"/>
+	</animation>
+
+	<!--着地-->
+	<animation id="0">
+		<frame image="data/aramaki/aramaki01.bmp" gap="0" x="0" y="0" w="128" h="128"/>
+	</animation>
+
+</object>

@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="Lib"
+				AdditionalIncludeDirectories="Lib;Game"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -112,8 +112,10 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="Lib;Game"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -173,23 +175,23 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Game\Game.cpp"
+				RelativePath=".\Game\Boon.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\Game.h"
+				RelativePath=".\Game\Boon.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\GamePlayState.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Game\GamePlayState.h"
 				>
 			</File>
 			<File
 				RelativePath=".\Game\main.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Rockman.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Rockman.h"
 				>
 			</File>
 			<File
@@ -205,6 +207,14 @@
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
 					>
 					<Tool
 						Name="VCCLCompilerTool"
@@ -236,18 +246,50 @@
 				RelativePath=".\Lib\GameLib.h"
 				>
 			</File>
+			<File
+				RelativePath=".\Lib\GameStateOperation.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Lib\GameStateOperation.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Lib\IGameState.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Anim"
 			>
-			<File
-				RelativePath=".\data\rockman.xml"
+			<Filter
+				Name="boon"
 				>
-			</File>
-			<File
-				RelativePath=".\data\tama.xml"
+				<File
+					RelativePath=".\data\boon\boon.xml"
+					>
+				</File>
+				<File
+					RelativePath=".\data\boon\bullet.xml"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="logo"
 				>
-			</File>
+				<File
+					RelativePath=".\data\logo\logo.xml"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="aramaki"
+				>
+				<File
+					RelativePath=".\data\aramaki\aramaki.xml"
+					>
+				</File>
+			</Filter>
 		</Filter>
 	</Files>
 	<Globals>

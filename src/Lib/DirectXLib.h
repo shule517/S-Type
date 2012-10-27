@@ -3,8 +3,8 @@
 class DirectXLib
 {
 public:
-	DirectXLib(void);
-	virtual ~DirectXLib(void);
+	DirectXLib();
+	virtual ~DirectXLib();
 
 public:
 	static void Init(LPDIRECT3DDEVICE9 _d3dDevice, LPD3DXSPRITE _sprite)

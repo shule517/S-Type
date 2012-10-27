@@ -1,33 +1,71 @@
 #include "StdAfx.h"
 #include "GameLib.h"
 #include <string>
+#include <GameStateOperation.h>
 
+// 初期ウィンドウサイズ
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 600;
-const char* ClassName = "Rockman Casket";
+
+// ウィンドウクラス名
+const char* ClassName = "S-Type";
 
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-GameLib::GameLib(void)
+GameLib::GameLib()
+:hWnd(NULL),
+d3d(NULL),
+d3dDevice(NULL),
+d3dpp(),
+sprite(NULL),
+input(NULL),
+inputDevice(NULL),
+lastTime(0),
+windowWidth(WINDOW_WIDTH),
+windowHeight(WINDOW_HEIGHT),
+stateOperation(new GameStateOperation())
 {
-	d3d = NULL;
-	d3dDevice = NULL;
-	sprite = NULL;
-	input = NULL;
-	inputDevice = NULL;
+	
 }
 
 /*-------------------------------------------
 	デストラクタ
 --------------------------------------------*/
-GameLib::~GameLib(void)
+GameLib::~GameLib()
 {
 	if (inputDevice) inputDevice->Release();
 	if (input) input->Release();
 	if (sprite) sprite->Release();
 	if (d3dDevice) d3dDevice->Release();
 	if (d3d) d3d->Release();
+	delete stateOperation;
+}
+
+/*-------------------------------------------
+	FPS取得
+--------------------------------------------*/
+void GameLib::DrawFPS()
+{
+	// 1フレームにかかった時間.
+	static DWORD beforTime = 0;
+	static int frameCount = 0;
+	static DWORD frameSum = 0;
+
+	DWORD frameTime = timeGetTime() - beforTime;
+	frameSum += frameTime;
+	beforTime = timeGetTime();
+	frameCount++;
+
+	if (frameCount >= 10)
+	{
+		char title[256] = {};
+		sprintf_s(title, "fps: %2.2f", ((1.0f / ((frameSum)) * 10000)));
+		SetWindowText(hWnd, title);
+
+		frameCount = 0;
+		frameSum = 0;
+	}
 }
 
 /*-------------------------------------------
@@ -42,8 +80,8 @@ void GameLib::DoMainLoop()
 		return;
 	}
 
-	// 初期化
-	Init();
+	// 初期化(各初期化)
+	stateOperation->Init();
 
 	// LastTime初期化
 	lastTime = timeGetTime();
@@ -51,9 +89,6 @@ void GameLib::DoMainLoop()
 	// メッセージループ
 	MSG msg;
 	ZeroMemory(&msg, sizeof(MSG));
-
-	// 1フレームにかかった時間.
-	DWORD beforTime = 0;
 
 	while (msg.message != WM_QUIT)
 	{
@@ -64,23 +99,8 @@ void GameLib::DoMainLoop()
 		}
 		else
 		{
-			static int frameCount = 0;
-			static DWORD frameSum = 0;
-
-			DWORD frameTime = timeGetTime() - beforTime;
-			frameSum += frameTime;
-			beforTime = timeGetTime();
-			frameCount++;
-
-			if (frameCount >= 10)
-			{
-				char title[256] = {};
-				sprintf(title, "fps: %2.2f", ((1.0f / ((frameSum)) * 10000)));
-				SetWindowText(hWnd, title);
-
-				frameCount = 0;
-				frameSum = 0;
-			}
+			// FPS表示
+			DrawFPS();
 
 			// アイドル：ゲームメイン処理
 			if (AppIdle() == false)
@@ -106,7 +126,7 @@ bool GameLib::AppIdle()
 	GetKeyState();
 
 	// 移動
-	Move();
+	stateOperation->Move();
 
 	// 黒で塗りつぶして消去
 	d3dDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(255, 255, 255), 1.0, 0);
@@ -117,7 +137,7 @@ bool GameLib::AppIdle()
 		if(SUCCEEDED(sprite->Begin(D3DXSPRITE_ALPHABLEND)))
 		{
 			// 描画
-			Render();
+			stateOperation->Render();
 
 			sprite->End();
 		}
@@ -287,11 +307,13 @@ bool GameLib::InitD3DWindow()
 	d3dDevice->SetRenderState(D3DRS_ALPHAREF, 0);
 	d3dDevice->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
 
+	// TODO DirectSoundを使用する
 	/*
 	IDirectSound8 *pDS8;
 	DirectSoundCreate8(NULL, &pDS8, NULL);
 	pDS8->SetCooperativeLevel(hWnd, DSSCL_NORMAL);
 	*/
+
 	/*--------------------------------------------
 		DirectXLibへ渡す
 	---------------------------------------------*/

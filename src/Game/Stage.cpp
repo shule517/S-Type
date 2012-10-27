@@ -1,11 +1,11 @@
 #include "StdAfx.h"
 #include "Stage.h"
 
-Stage::Stage(void)
+Stage::Stage()
 {
 }
 
-Stage::~Stage(void)
+Stage::~Stage()
 {
 }
 

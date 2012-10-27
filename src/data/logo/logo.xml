@@ -1,0 +1,31 @@
+﻿<object action="a.lua" animationNum="1">
+	
+	<!--アニメーションの定義-->
+
+	<!--ロゴ-->
+	<animation id="0">
+		<frame image="data/logo/s-type_01.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_02.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_03.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_04.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_05.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_06.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_07.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_08.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_09.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_10.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_11.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_12.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_13.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_14.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_15.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_16.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_17.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_18.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_19.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_20.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_21.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+		<frame image="data/logo/s-type_22.bmp" gap="10" x="0" y="0" w="475" h="85"/>
+	</animation>
+
+</object>

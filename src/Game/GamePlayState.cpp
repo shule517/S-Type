@@ -1,47 +1,47 @@
 #include "StdAfx.h"
-#include "Game.h"
+#include "GamePlayState.h"
 
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-Game::Game(void)
+GamePlayState::GamePlayState()
 {
 	stage = new Stage();
-	rockman = new Rockman();
+	boon = new Boon();
 }
 
 /*-------------------------------------------
 	デストラクタ
 --------------------------------------------*/
-Game::~Game(void)
+GamePlayState::~GamePlayState()
 {
 	delete stage;
-	delete rockman;
+	delete boon;
 }
 
 /*-------------------------------------------
 	初期化
 --------------------------------------------*/
-void Game::Init()
+void GamePlayState::Init()
 {
 	stage->Init();
-	rockman->Init();
+	boon->Init();
 }
 
 /*-------------------------------------------
 	移動
 --------------------------------------------*/
-void Game::Move()
+void GamePlayState::Move()
 {
 	stage->Move();
-	rockman->Move();
+	boon->Move();
 }
 
 /*-------------------------------------------
 	描画
 --------------------------------------------*/
-void Game::Render()
+void GamePlayState::Render()
 {
 	stage->Render();
-	rockman->Render();
+	boon->Render();
 }

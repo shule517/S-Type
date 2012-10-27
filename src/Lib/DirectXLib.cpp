@@ -10,7 +10,6 @@ char DirectXLib::keys[256];
 float DirectXLib::loopTime;
 map<string, LPDIRECT3DTEXTURE9> DirectXLib::textureMap;
 
-
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
@@ -153,6 +152,6 @@ bool DirectXLib::IsKeyDown(int key_no)
 --------------------------------------------*/
 void DirectXLib::SetText(char* text)
 {
-	HWND hWnd = FindWindow("Rockman Casket", NULL);
+	HWND hWnd = FindWindow("S-Type", NULL);
 	SetWindowText(hWnd, text);
 }

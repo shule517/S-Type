@@ -3,8 +3,8 @@
 class Stage : public DirectXLib
 {
 public:
-	Stage(void);
-	virtual ~Stage(void);
+	Stage();
+	virtual ~Stage();
 
 public:
 	void Init();
