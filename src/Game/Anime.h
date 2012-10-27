@@ -20,7 +20,7 @@ typedef vector<Frame> FrameList;
 typedef vector<FrameList> Animation;
 
 // アニメーションクラス
-class Anime : public DirectXLib
+class Anime
 {
 public:
 	Anime(char* file_name);

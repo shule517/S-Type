@@ -3,28 +3,16 @@
 class DirectXLib
 {
 public:
+	static DirectXLib* GetInstance();
+
+private:
 	DirectXLib();
 	virtual ~DirectXLib();
 
 public:
-	static void Init(LPDIRECT3DDEVICE9 _d3dDevice, LPD3DXSPRITE _sprite)
-	{
-		d3dDevice = _d3dDevice;
-		sprite = _sprite;
-	}
-
-	static void SetKeyState(char *_keys)
-	{
-		for (int i = 0; i < 256; i++)
-		{
-			keys[i] = _keys[i];
-		}
-	}
-
-	static void SetLoopTime(float time)
-	{
-		loopTime = time;
-	}
+	void Init(LPDIRECT3DDEVICE9 _d3dDevice, LPD3DXSPRITE _sprite);
+	void SetKeyState(char *_keys);
+	void SetLoopTime(float time);
 
 public:
 	LPDIRECT3DTEXTURE9 LoadTexture(const char *file_name);
@@ -46,10 +34,13 @@ public:
 	float GetLoopTime(){ return loopTime; } // ループ時間を取得
 
 private:
-	static LPDIRECT3DDEVICE9 d3dDevice;
-	static LPD3DXSPRITE sprite;
-	static char keys[256];
-	static float loopTime;
-	static map<string, LPDIRECT3DTEXTURE9> textureMap;
-	static ID3DXLine *d3dLine;
+	LPDIRECT3DDEVICE9 d3dDevice;
+	LPD3DXSPRITE sprite;
+	char keys[256];
+	float loopTime;
+	map<string, LPDIRECT3DTEXTURE9> textureMap;		// TODO ポインタを入れた方が良い？
+	ID3DXLine *d3dLine;
+
+	// インスタンス
+	static DirectXLib *instance;
 };

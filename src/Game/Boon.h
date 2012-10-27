@@ -1,8 +1,8 @@
 #pragma once
 
-#include <DirectXLib.h>
+#include <IObject.h>
 
-class Boon : public DirectXLib
+class Boon : public IObject
 {
 public:
 	Boon();
@@ -11,12 +11,9 @@ public:
 public:
 	void Init();
 	void Move();
-	void Render();
+	void Draw();
 
 private:
 	Anime *boonAnime;
 	Anime *bulletAnime;
-	float posX;
-	float posY;
-	float accelY;
 };

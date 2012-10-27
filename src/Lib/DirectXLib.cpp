@@ -1,20 +1,28 @@
 #include "StdAfx.h"
 #include "DirectXLib.h"
 
+// C4351(メンバイニシャライザでの配列初期化：特に問題なし)
+#pragma warning(disable:4351)
+
 /*-------------------------------------------
-	静的変数の初期化
+	インスタンス取得
 --------------------------------------------*/
-LPDIRECT3DDEVICE9 DirectXLib::d3dDevice = NULL;
-LPD3DXSPRITE DirectXLib::sprite = NULL;
-char DirectXLib::keys[256];
-float DirectXLib::loopTime;
-map<string, LPDIRECT3DTEXTURE9> DirectXLib::textureMap;
-ID3DXLine *DirectXLib::d3dLine = NULL;
+DirectXLib* DirectXLib::GetInstance()
+{
+	static DirectXLib instance;
+	return &instance;
+}
 
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
 DirectXLib::DirectXLib()
+:d3dDevice(NULL),
+sprite(NULL),
+keys(),
+loopTime(0),
+textureMap(),
+d3dLine(NULL)
 {
 	D3DXCreateLine(d3dDevice, &d3dLine);
 }
@@ -31,6 +39,34 @@ DirectXLib::~DirectXLib()
 		it->second->Release();
 		it = textureMap.erase(it);
 	}
+}
+
+/*-------------------------------------------
+	初期化
+--------------------------------------------*/
+void DirectXLib::Init(LPDIRECT3DDEVICE9 _d3dDevice, LPD3DXSPRITE _sprite)
+{
+	d3dDevice = _d3dDevice;
+	sprite = _sprite;
+}
+
+/*-------------------------------------------
+	キーボード入力状態の設定
+--------------------------------------------*/
+void DirectXLib::SetKeyState(char *_keys)
+{
+	for (int i = 0; i < 256; i++)
+	{
+		keys[i] = _keys[i];
+	}
+}
+
+/*-------------------------------------------
+	ループタイム(1ループにかかった時間)を設定
+--------------------------------------------*/
+void DirectXLib::SetLoopTime(float time)
+{
+	loopTime = time;
 }
 
 /*-------------------------------------------
@@ -109,7 +145,7 @@ void DirectXLib::DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect
 }
 
 /*-------------------------------------------
-	テクスチャの描画
+	テクスチャの描画	
 --------------------------------------------*/
 void DirectXLib::DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect, bool mirror)
 {

@@ -191,6 +191,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Game\IObject.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Game\main.cpp"
 				>
 			</File>

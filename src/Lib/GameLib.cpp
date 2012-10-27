@@ -156,7 +156,7 @@ bool GameLib::AppIdle()
 	// ƒ‹[ƒvŽžŠÔ‚ðŽæ“¾
 	DWORD now = timeGetTime();
 	float loopTime = (float)(now - lastTime) / 1000.0f;
-	DirectXLib::SetLoopTime(loopTime);
+	DirectXLib::GetInstance()->SetLoopTime(loopTime);
 	lastTime = now;
 
 	return true;
@@ -317,7 +317,7 @@ bool GameLib::InitD3DWindow()
 	/*--------------------------------------------
 		DirectXLib‚Ö“n‚·
 	---------------------------------------------*/
-	DirectXLib::Init(d3dDevice, sprite);
+	DirectXLib::GetInstance()->Init(d3dDevice, sprite);
 
 	return true;
 }
@@ -335,6 +335,6 @@ void GameLib::GetKeyState()
 		inputDevice->GetDeviceState(sizeof(keys), &keys);
 
 		// DirectXLib‚Ö“n‚·
-		DirectXLib::SetKeyState(keys);
+		DirectXLib::GetInstance()->SetKeyState(keys);
 	}
 }

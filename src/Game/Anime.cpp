@@ -177,6 +177,7 @@ void Anime::Draw(long x, long y)
 		count += frame.gap / 60.0f;
 	
 		RECT rect = { frame.x, frame.y, frame.x + frame.w, frame.y + frame.h };
-		DrawTexture(LoadTexture(frame.imagePath.c_str()), x, y, rect, isMirror);
+		LPDIRECT3DTEXTURE9 texture = DirectXLib::GetInstance()->LoadTexture(frame.imagePath.c_str());
+		DirectXLib::GetInstance()->DrawTexture(texture, x, y, rect, isMirror);
 	}
 }

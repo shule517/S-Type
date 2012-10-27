@@ -1,6 +1,8 @@
 #pragma once
 
-class Stage : public DirectXLib
+#include <IObject.h>
+
+class Stage : public IObject
 {
 public:
 	Stage();
@@ -9,7 +11,7 @@ public:
 public:
 	void Init();
 	void Move();
-	void Render();
+	void Draw();
 
 private:
 	LPDIRECT3DTEXTURE9 texture;

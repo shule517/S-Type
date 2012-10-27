@@ -1,20 +1,10 @@
 #include "StdAfx.h"
 #include "Boon.h"
 
-const float FALL_RATE = 10.0f;
 const float MOVE_SPEED = 4.0f;
-
-const float JUMP_POWER = 1.5f;
-const float GRAVITY_POWER = 0.4f;
-const float FALL_JUDGE = -4.5f;
-const float GRAVITY_RATE = 0.8f;
-
 
 Boon::Boon()
 {
-	posX = 0;
-	posY = 0;
-	accelY = 0;
 }
 
 Boon::~Boon()
@@ -25,8 +15,8 @@ Boon::~Boon()
 
 void Boon::Init()
 {
-	boonAnime = new Anime("data/rockman.xml");
-	bulletAnime = new Anime("data/tama.xml");
+	boonAnime = new Anime("data/boon/boon.xml");
+	bulletAnime = new Anime("data/boon/bullet.xml");
 }
 
 void Boon::Move()
@@ -43,17 +33,17 @@ public:
 
 list<TamaData> tamaList;
 
-void Boon::Render()
+void Boon::Draw()
 {
 	static bool isBuster = false;
 
-	if (!IsKeyDown(DIK_X))
+	if (!DirectXLib::GetInstance()->IsKeyDown(DIK_X))
 	{
 		isBuster = false;
 	}
 
 	// ˜AŽË
-	if (IsKeyDown(DIK_X))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_X))
 	{
 		static DWORD time = timeGetTime();
 
@@ -74,23 +64,23 @@ void Boon::Render()
 	}
 
 	// ¶‰EˆÚ“®
-	if (IsKeyDown(DIK_LEFT))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
 		posX -= MOVE_SPEED;
 		boonAnime->setMirror(true);
 	}
-	else if (IsKeyDown(DIK_RIGHT))
+	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
 		posX += MOVE_SPEED;
 		boonAnime->setMirror(false);
 	}
 
 	// ã‰ºˆÚ“®
-	if (IsKeyDown(DIK_UP))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_UP))
 	{
 		posY -= MOVE_SPEED;
 	}
-	else if (IsKeyDown(DIK_DOWN))
+	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_DOWN))
 	{
 		posY += MOVE_SPEED;
 	}

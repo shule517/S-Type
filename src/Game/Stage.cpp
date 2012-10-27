@@ -11,7 +11,7 @@ Stage::~Stage()
 
 void Stage::Init()
 {
-	texture = LoadTexture("data/map/block.bmp");
+	texture = DirectXLib::GetInstance()->LoadTexture("data/map/block.bmp");
 }
 
 float posX = 0;
@@ -24,28 +24,28 @@ void Stage::Move()
 	float speed = 80.0f;
 
 	// 操作
-	if (IsKeyDown(DIK_LEFT))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
-		posX -= speed * GetLoopTime();
+		posX -= speed * DirectXLib::GetInstance()->GetLoopTime();
 	}
 	
-	if (IsKeyDown(DIK_RIGHT))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
-		posX += speed * GetLoopTime();
+		posX += speed * DirectXLib::GetInstance()->GetLoopTime();
 	}
 	
-	if (IsKeyDown(DIK_UP))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_UP))
 	{
-		posY -= speed * GetLoopTime();
+		posY -= speed * DirectXLib::GetInstance()->GetLoopTime();
 	}
 	
-	if (IsKeyDown(DIK_DOWN))
+	if (DirectXLib::GetInstance()->IsKeyDown(DIK_DOWN))
 	{
-		posY += speed * GetLoopTime();
+		posY += speed * DirectXLib::GetInstance()->GetLoopTime();
 	}
 }
 
-void Stage::Render()
+void Stage::Draw()
 {
 	/*
 	// マップデータ
