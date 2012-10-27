@@ -1,7 +1,9 @@
 #include "StdAfx.h"
 #include "GameStateOperation.h"
 #include <IGameState.h>
-#include <GamePlayState.h>
+
+// TODO 今回はとりあえずゲーム中状態
+#include <GameState/GamePlayState.h>
 
 /*-------------------------------------------
 	コンストラクタ
