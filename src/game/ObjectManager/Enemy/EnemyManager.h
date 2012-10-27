@@ -9,6 +9,8 @@ public:
 	static EnemyManager* GetInstance();
 
 	void AddEnemy(EnemyObject* enemy);
+	const list<EnemyObject*>& GetObject(){ return enemyList; }
+
 	void Init();
 	void Move();
 	void Draw();

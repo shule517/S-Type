@@ -1,11 +1,17 @@
 #include "StdAfx.h"
 #include "EnemyObject.h"
+#include <DirectXLib.h>
+#include <Anime.h>
 
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-EnemyObject::EnemyObject()
+EnemyObject::EnemyObject(long x, long y)
 {
+	posX = x;
+	posY = y;
+	accelY = 1.1;
+	gravity = 0.4;
 }
 
 /*-------------------------------------------
@@ -13,6 +19,7 @@ EnemyObject::EnemyObject()
 --------------------------------------------*/
 EnemyObject::~EnemyObject()
 {
+	delete aramakiAnime;
 }
 
 /*-------------------------------------------
@@ -20,6 +27,7 @@ EnemyObject::~EnemyObject()
 --------------------------------------------*/
 void EnemyObject::Init()
 {
+	aramakiAnime = new Anime("data/aramaki/aramaki.xml");
 }
 
 /*-------------------------------------------
@@ -27,6 +35,14 @@ void EnemyObject::Init()
 --------------------------------------------*/
 void EnemyObject::Move()
 {
+	accelY += gravity;
+	posY += accelY;
+
+	if (posY > 500)
+	{
+		posY = 500;
+		aramakiAnime->setAnime(1);
+	}
 }
 
 /*-------------------------------------------
@@ -34,4 +50,5 @@ void EnemyObject::Move()
 --------------------------------------------*/
 void EnemyObject::Draw()
 {
+	aramakiAnime->Draw(posX, posY);
 }

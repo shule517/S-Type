@@ -1,6 +1,7 @@
 #include "StdAfx.h"
 #include "GamePlayState.h"
-#include "ObjectManager/Enemy/EnemyManager.h"
+#include <ObjectManager/Enemy/EnemyManager.h>
+#include <ObjectManager/Enemy/EnemyObject.h>
 
 /*-------------------------------------------
 	コンストラクタ
@@ -27,8 +28,43 @@ void GamePlayState::Init()
 {
 	stage->Init();
 	boon->Init();
+
+	for (long i = 0; i < 10; i++)
+	{
+		EnemyManager::GetInstance()->AddEnemy(new EnemyObject(120*i, -100*i));
+	}
+
 	EnemyManager::GetInstance()->Init();
 }
+
+
+/*-------------------------------------------
+	オブジェクト同士の当たり判定
+	objectA / objectBの当たり判定チェック
+--------------------------------------------*
+bool IsHit(const IObject& a, const IObject& b)
+{
+	long ax1 = a.posX + (a.imageWidth  - a.boundsWidth) / 2;
+	long ay1 = a.posY + (a.imageHeight - a.imageHeight) / 2;
+	long ax2 = a.posX + (a.imageWidth  - a.boundsWidth) / 2;
+	long ay2 = a.posY + (a.imageHeight - a.imageHeight) / 2;
+	long bx1 = b.posX + (b.imageWidth  - a.boundsWidth) / 2;
+	long by1 = b.posY + (b.imageHeight - a.imageHeight) / 2;
+	long bx2 = b.posX + (b.imageWidth  - a.boundsWidth) / 2;
+	long by2 = b.posY + (b.imageHeight - a.imageHeight) / 2;
+	
+	if ((ax1 < bx2) &&
+		(bx1 < ax2) &&
+		(ay1 < by2) &&
+		(by1 < ay2))
+	{
+		return true;
+	}
+	
+	return false;
+}
+
+
 
 /*-------------------------------------------
 	移動
@@ -37,6 +73,14 @@ void GamePlayState::Move()
 {
 	boon->Move();
 	EnemyManager::GetInstance()->Move();
+
+	list<EnemyObject*> enemyList = EnemyManager::GetInstance()->GetObject();
+
+	boon->IsHit((*boon), (*boon));
+	//boon->IsHit((*boon), enemyList.begin());
+
+	//EnemyManager::GetInstance()->GetObject();
+
 	/*
 	// TODO 以下、実装案
 	// 各自移動

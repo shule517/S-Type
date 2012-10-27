@@ -9,7 +9,7 @@
 
 	<!--着地-->
 	<animation id="0">
-		<frame image="data/aramaki/aramaki01.bmp" gap="0" x="0" y="0" w="128" h="128"/>
+		<frame image="data/aramaki/aramaki02.bmp" gap="0" x="0" y="0" w="128" h="128"/>
 	</animation>
 
 </object>
