@@ -9,18 +9,20 @@ LPD3DXSPRITE DirectXLib::sprite = NULL;
 char DirectXLib::keys[256];
 float DirectXLib::loopTime;
 map<string, LPDIRECT3DTEXTURE9> DirectXLib::textureMap;
+ID3DXLine *DirectXLib::d3dLine = NULL;
 
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-DirectXLib::DirectXLib(void)
+DirectXLib::DirectXLib()
 {
+	D3DXCreateLine(d3dDevice, &d3dLine);
 }
 
 /*-------------------------------------------
 	デストラクタ
 --------------------------------------------*/
-DirectXLib::~DirectXLib(void)
+DirectXLib::~DirectXLib()
 {
 	// テクスチャーを解放
 	map<string, LPDIRECT3DTEXTURE9>::iterator it;
@@ -121,6 +123,37 @@ void DirectXLib::DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect
 	}
 }
 
+/*-------------------------------------------
+	四角形の描画
+	＜引数＞
+	startPos: 四角形の始点（左上座標）
+	endPos: 四角形の終点（右下座標）
+--------------------------------------------*/
+void DirectXLib::DrawBox(D3DXVECTOR2 startPos, D3DXVECTOR2 endPos)
+{
+	// 4点：四角形描画
+	const short vertexCount = 4;
+	D3DXVECTOR2 vec[vertexCount] = { startPos, D3DXVECTOR2(startPos.x, endPos.y), endPos, D3DXVECTOR2(endPos.x, startPos.y) };
+	d3dLine->Begin();
+	d3dLine->Draw(vec, vertexCount, D3DCOLOR_ARGB(255, 255, 0, 0));
+	d3dLine->End();
+}
+
+/*-------------------------------------------
+	直線の描画
+	＜引数＞
+	startPos: 直線の始点
+	endPos: 直線の終点
+--------------------------------------------*/
+void DirectXLib::DrawLine(D3DXVECTOR2 startPos, D3DXVECTOR2 endPos)
+{
+	// 2点：直線描画
+	const short vertexCount = 2;
+	D3DXVECTOR2 vec[vertexCount] = { startPos, endPos };
+	d3dLine->Begin();
+	d3dLine->Draw(vec, vertexCount, D3DCOLOR_ARGB(255, 255, 0, 0));
+	d3dLine->End();
+}
 
 /*-------------------------------------------
 	テクスチャの描画
