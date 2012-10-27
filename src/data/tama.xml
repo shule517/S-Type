@@ -1,9 +1,0 @@
-﻿<object action="a.lua" animationNum="2">
-	
-	<!--アニメーションの定義-->
-
-	<animation id="0">
-		<frame image="data/boon/bullet1.bmp" gap="0" x="0" y="0" w="32" h="32"/>
-	</animation>
-
-</object>
