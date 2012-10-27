@@ -14,11 +14,6 @@ void Stage::Init()
 	texture = DirectXLib::GetInstance()->LoadTexture("data/map/block.bmp");
 }
 
-float posX = 0;
-float posY = 0;
-float ax = 0;
-float ay = 0;
-
 void Stage::Move()
 {
 	float speed = 80.0f;
@@ -26,22 +21,22 @@ void Stage::Move()
 	// ‘€ì
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
-		posX -= speed * DirectXLib::GetInstance()->GetLoopTime();
+		posX -= static_cast<long>(speed * DirectXLib::GetInstance()->GetLoopTime());
 	}
 	
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
-		posX += speed * DirectXLib::GetInstance()->GetLoopTime();
+		posX += static_cast<long>(speed * DirectXLib::GetInstance()->GetLoopTime());
 	}
 	
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_UP))
 	{
-		posY -= speed * DirectXLib::GetInstance()->GetLoopTime();
+		posY -= static_cast<long>(speed * DirectXLib::GetInstance()->GetLoopTime());
 	}
 	
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_DOWN))
 	{
-		posY += speed * DirectXLib::GetInstance()->GetLoopTime();
+		posY += static_cast<long>(speed * DirectXLib::GetInstance()->GetLoopTime());
 	}
 }
 

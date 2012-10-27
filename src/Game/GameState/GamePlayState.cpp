@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "GamePlayState.h"
+#include "ObjectManager/Enemy/EnemyManager.h"
 
 /*-------------------------------------------
 	コンストラクタ
@@ -26,6 +27,7 @@ void GamePlayState::Init()
 {
 	stage->Init();
 	boon->Init();
+	EnemyManager::GetInstance()->Init();
 }
 
 /*-------------------------------------------
@@ -34,6 +36,7 @@ void GamePlayState::Init()
 void GamePlayState::Move()
 {
 	boon->Move();
+	EnemyManager::GetInstance()->Move();
 	/*
 	// TODO 以下、実装案
 	// 各自移動
@@ -156,4 +159,5 @@ void GamePlayState::Render()
 {
 	stage->Draw();
 	boon->Draw();
+	EnemyManager::GetInstance()->Draw();
 }

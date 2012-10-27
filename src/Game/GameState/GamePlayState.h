@@ -1,8 +1,8 @@
 #pragma once
 
 #include "GameLib.h"
-#include "Stage.h"
-#include "Boon.h"
+#include "ObjectManager/Stage/Stage.h"
+#include "ObjectManager/Boon/Boon.h"
 #include <IGameState.h>
 
 class GamePlayState : public IGameState

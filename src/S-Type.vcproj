@@ -167,43 +167,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\Game\Anime.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Anime.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Boon.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Boon.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\GamePlayState.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\GamePlayState.h"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\IObject.h"
-				>
-			</File>
-			<File
 				RelativePath=".\Game\main.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Stage.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\Game\Stage.h"
 				>
 			</File>
 			<File
@@ -230,10 +194,94 @@
 				RelativePath=".\Game\StdAfx.h"
 				>
 			</File>
+			<Filter
+				Name="ObjectManager"
+				>
+				<File
+					RelativePath=".\Game\ObjectManager\IObject.h"
+					>
+				</File>
+				<Filter
+					Name="Enemy"
+					>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyManager.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyManager.h"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyObject.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyObject.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="Bullet"
+					>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletObject.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletObject.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="Boon"
+					>
+					<File
+						RelativePath=".\Game\ObjectManager\Boon\Boon.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Boon\Boon.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="Stage"
+					>
+					<File
+						RelativePath=".\Game\ObjectManager\Stage\Stage.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Stage\Stage.h"
+						>
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="GameSate"
+				>
+				<File
+					RelativePath=".\Game\GameState\GamePlayState.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Game\GameState\GamePlayState.h"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Lib"
 			>
+			<File
+				RelativePath=".\Lib\Anime.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Lib\Anime.h"
+				>
+			</File>
 			<File
 				RelativePath=".\Lib\DirectXLib.cpp"
 				>

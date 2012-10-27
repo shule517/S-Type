@@ -66,23 +66,23 @@ void Boon::Draw()
 	// ¶‰EˆÚ“®
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
-		posX -= MOVE_SPEED;
+		posX -= static_cast<long>(MOVE_SPEED);
 		boonAnime->setMirror(true);
 	}
 	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
-		posX += MOVE_SPEED;
+		posX += static_cast<long>(MOVE_SPEED);
 		boonAnime->setMirror(false);
 	}
 
 	// ã‰ºˆÚ“®
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_UP))
 	{
-		posY -= MOVE_SPEED;
+		posY -= static_cast<long>(MOVE_SPEED);
 	}
 	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_DOWN))
 	{
-		posY += MOVE_SPEED;
+		posY += static_cast<long>(MOVE_SPEED);
 	}
 
 	// Ž©‹@•`‰æ
