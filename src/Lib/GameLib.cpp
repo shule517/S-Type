@@ -23,10 +23,11 @@ input(NULL),
 inputDevice(NULL),
 lastTime(0),
 windowWidth(WINDOW_WIDTH),
-windowHeight(WINDOW_HEIGHT),
-stateOperation(new GameStateOperation())
+windowHeight(WINDOW_HEIGHT)
+// TODO ‹­ˆø’† stateOperation(new GameStateOperation())
 {
-	
+	// TODO ‹­ˆø’†
+	stateOperation = GameStateOperation::GetInstance();
 }
 
 /*-------------------------------------------
@@ -39,7 +40,7 @@ GameLib::~GameLib()
 	if (sprite) sprite->Release();
 	if (d3dDevice) d3dDevice->Release();
 	if (d3d) d3d->Release();
-	delete stateOperation;
+	// TODO ‹­ˆø’ˆÓ delete stateOperation;
 }
 
 /*-------------------------------------------

@@ -270,11 +270,27 @@
 						>
 					</File>
 					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletMissile.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletMissile.h"
+						>
+					</File>
+					<File
 						RelativePath=".\Game\ObjectManager\Bullet\BulletObject.cpp"
 						>
 					</File>
 					<File
 						RelativePath=".\Game\ObjectManager\Bullet\BulletObject.h"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletStandard.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletStandard.h"
 						>
 					</File>
 				</Filter>
@@ -320,6 +336,14 @@
 				</File>
 				<File
 					RelativePath=".\Game\GameState\GamePlayState.h"
+					>
+				</File>
+				<File
+					RelativePath=".\Game\GameState\GameTitleState.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\Game\GameState\GameTitleState.h"
 					>
 				</File>
 			</Filter>

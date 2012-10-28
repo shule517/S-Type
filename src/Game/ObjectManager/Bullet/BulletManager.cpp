@@ -58,18 +58,28 @@ void BulletManager::Init()
 }
 
 /*-------------------------------------------
-	“G“®ì
+	’e“®ì
 --------------------------------------------*/
 void BulletManager::Move()
 {
-	for (std::list<BulletObject*>::iterator it = bulletList.begin(); it != bulletList.end(); ++it)
+	for (std::list<BulletObject*>::iterator it = bulletList.begin(); it != bulletList.end();)
 	{
-		(*it)->Move();
+		// €‚ñ‚¾
+		if ((*it)->life <= 0)
+		{
+			it = bulletList.erase(it);
+		}
+		// “®ì
+		else
+		{
+			(*it)->Move();
+			it++;
+		}
 	}
 }
 
 /*-------------------------------------------
-	“G•`‰æ
+	’e•`‰æ
 --------------------------------------------*/
 void BulletManager::Draw()
 {

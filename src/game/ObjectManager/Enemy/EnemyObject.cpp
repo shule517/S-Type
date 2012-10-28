@@ -20,3 +20,9 @@ EnemyObject::EnemyObject(const long x, const long y, const long animeNo)
 EnemyObject::~EnemyObject()
 {
 }
+
+void EnemyObject::Hit()
+{
+	PlaySound("data/se/break.wav", NULL, SND_FILENAME | SND_ASYNC);
+	life--;
+}

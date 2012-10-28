@@ -3,7 +3,7 @@
 #include <IGameState.h>
 
 // TODO 今回はとりあえずゲーム中状態
-#include <GameState/GamePlayState.h>
+#include <GameState/GameTitleState.h>
 
 /*-------------------------------------------
 	コンストラクタ
@@ -11,7 +11,7 @@
 GameStateOperation::GameStateOperation()
 {
 	// TODO 今回はとりあえずゲーム中状態
-	gameState = new GamePlayState();
+	gameState = new GameTitleState();
 }
 
 /*-------------------------------------------

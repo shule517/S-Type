@@ -1,0 +1,10 @@
+﻿<object action="a.lua" animationNum="2">
+	
+	<!--アニメーションの定義-->
+
+	<!--通常弾-->
+	<animation id="0">
+		<frame image="data/bullet/StandardBullet01.bmp" gap="0" x="0" y="0" w="16" h="16"/>
+	</animation>
+
+</object>

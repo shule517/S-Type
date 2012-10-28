@@ -3,7 +3,8 @@
 #include "BulletObject.h"
 
 // 各具象
-// #include "StandardBullet.h"
+#include "BulletStandard.h"
+#include "BulletMissile.h"
 
 /*-------------------------------------------
 	コンストラクタ
@@ -30,20 +31,20 @@ BulletObject* BulletFactory::Create(const E_OBJECT_TYPE objectType, const long x
 	switch (objectType)
 	{
 	case OBJECT_BULLET_STANDARD:	// 標準弾
-//		bullet = new StandardBullet(x, y, animeNo);
-		bullet = new BulletObject(x, y, dir);
+		bullet = new BulletStandard(x, y, dir);
 		break;
-/*
-	case OBJECT_BULLET_STANDARD:	// レーザー
-//		bullet = new StandardBullet(x, y, animeNo);
-		bullet = new BulletObject(x, y, dir);
+
+	case OBJECT_BULLET_MISSILE:		// ミサイル
+		bullet = new BulletMissile(x, y, dir);
 		break;
-*/
+
 	default:						// 標準弾
-//		bullet = new StandardBullet(x, y, animeNo);
-		bullet = new BulletObject(x, y, dir);
+		bullet = new BulletStandard(x, y, dir);
 		break;
 	}
+
+	// 初期化
+	bullet->Init();
 
 	return bullet;
 }

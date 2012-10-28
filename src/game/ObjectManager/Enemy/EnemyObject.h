@@ -14,6 +14,8 @@ public:
 	// void Move();	// ˆÚ“®
 	// void Draw();	// •`‰æ
 
+	void Hit();
+
 protected:
 	Anime *anime;	// ƒAƒjƒ
 };

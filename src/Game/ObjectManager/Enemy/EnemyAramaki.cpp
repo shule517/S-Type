@@ -2,6 +2,7 @@
 #include "EnemyAramaki.h"
 #include <DirectXLib.h>
 #include <Anime.h>
+#include "../Boon/Boon.h"
 
 /*-------------------------------------------
 	コンストラクタ
@@ -14,6 +15,7 @@ gravity(0.4f)
 	posX = x;
 	posY = y;
 	startAnimeNo = animeNo;
+	life = 5;
 }
 
 /*-------------------------------------------
@@ -38,8 +40,20 @@ void EnemyAramaki::Init()
 --------------------------------------------*/
 void EnemyAramaki::Move()
 {
-	accelY += gravity;
-	posY += static_cast<long>(accelY);
+	static bool isDown = false;
+
+	// X軸が近いと落ちる
+	long boonX = Boon::GetInstance()->posX;
+	if (((posX - 10) < boonX) && (boonX  < (posX + 10)))
+	{
+		isDown = true;
+	}
+
+	if (isDown)
+	{
+		accelY += gravity;
+		posY += static_cast<long>(accelY);
+	}
 
 	if (posY > 500)
 	{

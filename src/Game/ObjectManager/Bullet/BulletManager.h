@@ -10,13 +10,15 @@ class BulletObject;
 class BulletManager
 {
 public:
-	BulletManager* GetInstance();
+	static BulletManager* GetInstance();
 
 	void ShootBullet(E_OBJECT_TYPE objectType, float x, float y, float dir);
 
 	void Init();
 	void Move();
 	void Draw();
+
+	const list<BulletObject*>& GetObject(){ return bulletList; }
 
 private:
 	BulletManager();

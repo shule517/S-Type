@@ -64,7 +64,16 @@ void EnemyManager::Move()
 {
 	for (std::list<EnemyObject*>::iterator it = enemyList.begin(); it != enemyList.end(); ++it)
 	{
-		(*it)->Move();
+		// Ž€‚ñ‚¾
+		if ((*it)->life <= 0)
+		{
+			it = enemyList.erase(it);
+		}
+		// “®ì
+		else
+		{
+			(*it)->Move();
+		}
 	}
 }
 

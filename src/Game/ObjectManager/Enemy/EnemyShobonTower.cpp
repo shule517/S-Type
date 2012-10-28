@@ -14,6 +14,7 @@ gravity(0.01f)
 	posX = x;
 	posY = y;
 	startAnimeNo = animeNo;
+	life = 5;
 }
 
 /*-------------------------------------------

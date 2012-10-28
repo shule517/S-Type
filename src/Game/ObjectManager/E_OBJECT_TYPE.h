@@ -12,6 +12,7 @@ enum E_OBJECT_TYPE
 
 	// 弾
 	OBJECT_BULLET_STANDARD,	// スタンダード
+	OBJECT_BULLET_MISSILE,	// ミサイル
 
 	// アイテム
 
