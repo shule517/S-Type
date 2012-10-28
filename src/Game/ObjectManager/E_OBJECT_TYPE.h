@@ -11,6 +11,7 @@ enum E_OBJECT_TYPE
 	OBJECT_SHOBON,		// ショボンタワー
 
 	// 弾
+	OBJECT_BULLET_STANDARD,	// スタンダード
 
 	// アイテム
 

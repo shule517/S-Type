@@ -4,8 +4,11 @@
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-BulletObject::BulletObject()
+BulletObject::BulletObject(const long x, const long y, const float dir)
+:bulletDir(dir)
 {
+	posX = x;
+	posY = y;
 }
 
 /*-------------------------------------------

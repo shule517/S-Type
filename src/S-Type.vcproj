@@ -254,6 +254,22 @@
 					Name="Bullet"
 					>
 					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletFactory.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletFactory.h"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletManager.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Bullet\BulletManager.h"
+						>
+					</File>
+					<File
 						RelativePath=".\Game\ObjectManager\Bullet\BulletObject.cpp"
 						>
 					</File>

@@ -6,14 +6,23 @@
 #include "EnemyAramaki.h"
 #include "EnemyShobonTower.h"
 
+/*-------------------------------------------
+	コンストラクタ
+--------------------------------------------*/
 EnemyFactory::EnemyFactory()
 {
 }
 
+/*-------------------------------------------
+	デストラクタ
+--------------------------------------------*/
 EnemyFactory::~EnemyFactory()
 {
 }
 
+/*-------------------------------------------
+	インスタンス生成
+--------------------------------------------*/
 EnemyObject* EnemyFactory::Create(const E_OBJECT_TYPE objectType, const long x, const long y, const long animeNo)
 {
 	EnemyObject *enemy = NULL;
