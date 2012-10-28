@@ -198,12 +198,24 @@
 				Name="ObjectManager"
 				>
 				<File
+					RelativePath=".\Game\ObjectManager\E_OBJECT_TYPE.h"
+					>
+				</File>
+				<File
 					RelativePath=".\Game\ObjectManager\IObject.h"
 					>
 				</File>
 				<Filter
 					Name="Enemy"
 					>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyFactory.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyFactory.h"
+						>
+					</File>
 					<File
 						RelativePath=".\Game\ObjectManager\Enemy\EnemyManager.cpp"
 						>
@@ -312,7 +324,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Anim"
+			Name="Anime"
 			>
 			<Filter
 				Name="boon"

@@ -6,12 +6,13 @@
 /*-------------------------------------------
 	コンストラクタ
 --------------------------------------------*/
-EnemyObject::EnemyObject(long x, long y)
+EnemyObject::EnemyObject(const long x, const long y, const long animeNo)
+:accelY(1.1f),
+gravity(0.4f)
 {
 	posX = x;
 	posY = y;
-	accelY = 1.1;
-	gravity = 0.4;
+	startAnimeNo = animeNo;
 }
 
 /*-------------------------------------------
@@ -28,6 +29,7 @@ EnemyObject::~EnemyObject()
 void EnemyObject::Init()
 {
 	aramakiAnime = new Anime("data/aramaki/aramaki.xml");
+	aramakiAnime->SetAnime(startAnimeNo);
 }
 
 /*-------------------------------------------
@@ -36,12 +38,12 @@ void EnemyObject::Init()
 void EnemyObject::Move()
 {
 	accelY += gravity;
-	posY += accelY;
+	posY += static_cast<long>(accelY);
 
 	if (posY > 500)
 	{
 		posY = 500;
-		aramakiAnime->setAnime(1);
+		aramakiAnime->SetAnime(1);
 	}
 }
 

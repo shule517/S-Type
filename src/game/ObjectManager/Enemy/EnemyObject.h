@@ -6,7 +6,7 @@ class Anime;
 class EnemyObject : public IObject
 {
 public:
-	EnemyObject(long x, long y);
+	EnemyObject(const long x, const long y, const long animeNo);
 	virtual ~EnemyObject();
 
 	void Init();	// ‰Šú‰»

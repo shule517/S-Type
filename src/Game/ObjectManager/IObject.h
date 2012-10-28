@@ -9,7 +9,8 @@ public:
 	imageWidth(0),
 	imageHeight(0),
 	boundsWidth(0),
-	boundsHeight(0)
+	boundsHeight(0),
+	startAnimeNo(0)
 	{};
 	virtual ~IObject(){};
 
@@ -53,4 +54,5 @@ protected:
 	long imageHeight;		// 画像高さ
 	long boundsWidth;		// 当たり判定(幅)
 	long boundsHeight;		// 当たり判定(高さ)
+	long startAnimeNo;		// 開始アニメNo
 };

@@ -29,9 +29,11 @@ void GamePlayState::Init()
 	stage->Init();
 	boon->Init();
 
+	// TODO マップエディターから敵を追加する
+	// TODO 画面内に敵が入った時に追加する
 	for (long i = 0; i < 10; i++)
 	{
-		EnemyManager::GetInstance()->AddEnemy(OBJECT_ARAMAKI, 120*i, -100*i);
+		EnemyManager::GetInstance()->AddEnemy(OBJECT_ARAMAKI, 120*i, -100*i, i%2);
 	}
 
 	EnemyManager::GetInstance()->Init();

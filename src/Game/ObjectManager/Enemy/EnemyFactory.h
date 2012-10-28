@@ -10,5 +10,5 @@ public:
 	EnemyFactory();
 	virtual ~EnemyFactory();
 
-	EnemyObject* Create(const E_OBJECT_TYPE objectType, const long x, const long y);
+	EnemyObject* Create(const E_OBJECT_TYPE objectType, const long x, const long y, const long animeNo);
 };

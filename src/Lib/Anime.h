@@ -29,27 +29,27 @@ public:
 public:
 	void Draw(long x, long y);
 	
-	void setMirror(bool mirror)
+	void SetMirror(bool mirror)
 	{
 		isMirror= mirror;
 	}
 
-	bool getMirror()
+	bool GetMirror()
 	{
 		return isMirror;
 	}
 
-	void setAnime(int anime_no)
+	void SetAnime(int anime_no)
 	{
 		animeNo = anime_no;
 	}
 		
-	int toInt(BSTR str)
+	int ToInt(BSTR str)
 	{
 		return _wtoi(str);
 	}
 
-	char* toStr(BSTR str)
+	char* ToStr(BSTR str)
 	{
 		return _com_util::ConvertBSTRToString(str);
 	}

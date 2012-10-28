@@ -132,15 +132,15 @@ bool Anime::ReadXML(char* file_name)
 Frame Anime::GetFrame(MSXML2::IXMLDOMElementPtr pRoot)
 {
 	Frame frame;
-	frame.imagePath = toStr(pRoot->getAttribute("image").bstrVal);
-	frame.x = toInt(pRoot->getAttribute("x").bstrVal);
-	frame.y = toInt(pRoot->getAttribute("y").bstrVal);
-	frame.w = toInt(pRoot->getAttribute("w").bstrVal);
-	frame.h = toInt(pRoot->getAttribute("h").bstrVal);
-	frame.gap = toInt(pRoot->getAttribute("gap").bstrVal);
+	frame.imagePath = ToStr(pRoot->getAttribute("image").bstrVal);
+	frame.x = ToInt(pRoot->getAttribute("x").bstrVal);
+	frame.y = ToInt(pRoot->getAttribute("y").bstrVal);
+	frame.w = ToInt(pRoot->getAttribute("w").bstrVal);
+	frame.h = ToInt(pRoot->getAttribute("h").bstrVal);
+	frame.gap = ToInt(pRoot->getAttribute("gap").bstrVal);
 
 	// TODO ‰¹º‚ÌŽw’è‚às‚¦‚é‚æ‚¤‚É‚µ‚½‚¢
-	//frame.soundPath = toStr(pRoot->getAttribute("image").bstrVal);
+	//frame.soundPath = ToStr(pRoot->getAttribute("image").bstrVal);
 
 	return frame;
 }

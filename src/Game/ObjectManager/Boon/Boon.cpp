@@ -53,9 +53,9 @@ void Boon::Draw()
 			// PlaySound("data/buster.wav", NULL, SND_FILENAME | SND_ASYNC);
 
 			TamaData t;
-			t.x = (256.0f / 2.0f) + (boonAnime->getMirror() ? -35 : 5);;
+			t.x = (256.0f / 2.0f) + (boonAnime->GetMirror() ? -35 : 5);;
 			t.y = 163.0f + posY;
-			t.accelX = 15.0f * (boonAnime->getMirror() ? -1 : 1);
+			t.accelX = 15.0f * (boonAnime->GetMirror() ? -1 : 1);
 			tamaList.push_back(t);
 			isBuster = true;
 
@@ -67,12 +67,12 @@ void Boon::Draw()
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
 		posX -= static_cast<long>(MOVE_SPEED);
-		boonAnime->setMirror(true);
+		boonAnime->SetMirror(true);
 	}
 	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
 		posX += static_cast<long>(MOVE_SPEED);
-		boonAnime->setMirror(false);
+		boonAnime->SetMirror(false);
 	}
 
 	// è„â∫à⁄ìÆ
