@@ -31,7 +31,7 @@ void GamePlayState::Init()
 
 	for (long i = 0; i < 10; i++)
 	{
-		EnemyManager::GetInstance()->AddEnemy(new EnemyObject(120*i, -100*i));
+		EnemyManager::GetInstance()->AddEnemy(OBJECT_ARAMAKI, 120*i, -100*i);
 	}
 
 	EnemyManager::GetInstance()->Init();
