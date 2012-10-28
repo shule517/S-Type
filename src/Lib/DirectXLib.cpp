@@ -24,7 +24,6 @@ loopTime(0),
 textureMap(),
 d3dLine(NULL)
 {
-	D3DXCreateLine(d3dDevice, &d3dLine);
 }
 
 /*-------------------------------------------
@@ -48,6 +47,7 @@ void DirectXLib::Init(LPDIRECT3DDEVICE9 _d3dDevice, LPD3DXSPRITE _sprite)
 {
 	d3dDevice = _d3dDevice;
 	sprite = _sprite;
+	D3DXCreateLine(d3dDevice, &d3dLine);
 }
 
 /*-------------------------------------------
@@ -134,6 +134,33 @@ LPDIRECT3DTEXTURE9 DirectXLib::LoadTexture(const char *file_name)
 void DirectXLib::DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y)
 {
 	sprite->Draw(texture, NULL, &D3DXVECTOR3(1.0f, 1.0f, 0.0f), &D3DXVECTOR3((float)x, (float)y, 0.0f), D3DCOLOR_RGBA(255, 255, 255, 255));
+}
+
+/*-------------------------------------------
+	ƒeƒNƒXƒ`ƒƒ‚ð‰ñ“]•`‰æ
+--------------------------------------------*/
+void DirectXLib::DrawSpinTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect, bool mirror, float rowSpped)
+{
+	static float timeCount = 0.0f;
+	timeCount += 0.05f;
+
+	float moveX = sin(timeCount) * 10;
+
+	// ‰ñ“]‚³‚¹‚é
+	D3DXMATRIX matWorld,matWork;
+	D3DXMatrixRotationZ(&matWorld,0);	// ‰ñ“]
+	D3DXMatrixTranslation(&matWork, moveX, 0.0f,0.0f);			// ˆÚ“®
+	matWorld= matWorld*matWork;
+	sprite->SetTransform(&matWorld);	
+
+	if (mirror)
+	{
+		sprite->Draw(texture, &rect, &D3DXVECTOR3(-1.0f, 1.0f, 0.0f), &D3DXVECTOR3((float)x + (rect.right - rect.left), (float)y, 0.0f), 0xffffffff);
+	}
+	else
+	{
+		sprite->Draw(texture, &rect, &D3DXVECTOR3(1.0f, 1.0f, 0.0f), &D3DXVECTOR3((float)x, (float)y, 0.0f), 0xffffffff);
+	}
 }
 
 /*-------------------------------------------

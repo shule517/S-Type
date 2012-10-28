@@ -18,5 +18,5 @@ private:
 
 private:
 	Stage *stage;	// ステージ
-	Boon *boon;	// ブーン
+	Boon *boon;		// ブーン
 };

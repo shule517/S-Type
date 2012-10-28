@@ -4,7 +4,7 @@
 
 	<!--ブーン-->
 	<animation id="0">
-		<frame image="data/boon/boon.bmp" gap="0" x="0" y="0" w="228" h="32"/>
+		<frame image="data/boon/boon.bmp" gap="0" x="-30" y="0" w="228" h="32"/>
 	</animation>
 
 	<!--移動-->

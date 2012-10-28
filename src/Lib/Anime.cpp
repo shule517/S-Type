@@ -179,5 +179,29 @@ void Anime::Draw(long x, long y)
 		RECT rect = { frame.x, frame.y, frame.x + frame.w, frame.y + frame.h };
 		LPDIRECT3DTEXTURE9 texture = DirectXLib::GetInstance()->LoadTexture(frame.imagePath.c_str());
 		DirectXLib::GetInstance()->DrawTexture(texture, x, y, rect, isMirror);
+
+#ifdef _DEBUG_
+		// 当たり判定を描画
+		DirectXLib::GetInstance()->DrawBox(D3DXVECTOR2(x, y), D3DXVECTOR2(x+frame.w, y+frame.h));
+#endif // _DEBUG_
+	}
+}
+
+/*-------------------------------------------
+	アニメーション回転描画
+	引数：x:X座標, y:Y座標
+--------------------------------------------*/
+void Anime::SpinDraw(long x, long y, float spinSpeed)
+{
+	FrameList frameList = animation[animeNo % animation.size()];
+
+	if (frameList.size() > 0)
+	{
+		Frame frame = frameList.at((long)count % frameList.size());
+		count += frame.gap / 60.0f;
+	
+		RECT rect = { frame.x, frame.y, frame.x + frame.w, frame.y + frame.h };
+		LPDIRECT3DTEXTURE9 texture = DirectXLib::GetInstance()->LoadTexture(frame.imagePath.c_str());
+		DirectXLib::GetInstance()->DrawSpinTexture(texture, x, y, rect, isMirror, spinSpeed);
 	}
 }

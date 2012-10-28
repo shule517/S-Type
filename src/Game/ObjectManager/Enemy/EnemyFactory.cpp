@@ -2,6 +2,10 @@
 #include "EnemyFactory.h"
 #include "EnemyObject.h"
 
+// 各具象
+#include "EnemyAramaki.h"
+#include "EnemyShobonTower.h"
+
 EnemyFactory::EnemyFactory()
 {
 }
@@ -18,13 +22,13 @@ EnemyObject* EnemyFactory::Create(const E_OBJECT_TYPE objectType, const long x, 
 	switch (objectType)
 	{
 	case OBJECT_ARAMAKI:	// 荒巻
-		enemy = new EnemyObject(x, y, animeNo);
+		enemy = new EnemyAramaki(x, y, animeNo);
 		break;
 	case OBJECT_SHOBON:		// ショボンタワー
-		enemy = new EnemyObject(x, y, animeNo);
+		enemy = new EnemyShobonTower(x, y, animeNo);
 		break;
 	default:
-		enemy = new EnemyObject(x, y, animeNo);
+		enemy = new EnemyAramaki(x, y, animeNo);
 		break;
 	}
 

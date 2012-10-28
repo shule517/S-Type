@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Stage/StageManager.h"
+
 class IObject
 {
 public:
@@ -45,6 +47,16 @@ public:
 		}
 		
 		return false;
+	}
+
+	// 表示位置を取得
+	D3DXVECTOR2 GetClientPos()
+	{
+		// ステージ座標を取得
+		D3DXVECTOR2 stagePos = StageManager::GetInstance()->GetStagePos();
+
+		// 表示位置(Client座標)を返す
+		return D3DXVECTOR2(posX - stagePos.x, posY - stagePos.y);
 	}
 
 protected:

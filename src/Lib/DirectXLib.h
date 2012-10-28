@@ -22,6 +22,7 @@ public:
 	void DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect);
 	void DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, int index);
 	void DrawTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect, bool mirror);
+	void DrawSpinTexture(LPDIRECT3DTEXTURE9 texture, int x, int y, RECT rect, bool mirror, float rowSpped);
 
 	// ü•`‰æ
 	void DrawLine(D3DXVECTOR2 startPos, D3DXVECTOR2 endPos);
@@ -32,6 +33,7 @@ public:
 
 	bool IsKeyDown(int key_no);
 	float GetLoopTime(){ return loopTime; } // ƒ‹[ƒvŠÔ‚ğæ“¾
+	float GetMove(long speed){ return loopTime * speed; };	// ˆÚ“®—Ê‚ğæ“¾(dot/s)
 
 private:
 	LPDIRECT3DDEVICE9 d3dDevice;

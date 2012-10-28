@@ -9,13 +9,13 @@ Boon::Boon()
 
 Boon::~Boon()
 {
-	delete boonAnime;
+	delete anime;
 	delete bulletAnime;
 }
 
 void Boon::Init()
 {
-	boonAnime = new Anime("data/boon/boon.xml");
+	anime = new Anime("data/boon/boon.xml");
 	bulletAnime = new Anime("data/boon/bullet.xml");
 }
 
@@ -53,9 +53,9 @@ void Boon::Draw()
 			// PlaySound("data/buster.wav", NULL, SND_FILENAME | SND_ASYNC);
 
 			TamaData t;
-			t.x = (256.0f / 2.0f) + (boonAnime->GetMirror() ? -35 : 5);;
+			t.x = (256.0f / 2.0f) + (anime->GetMirror() ? -35 : 5);;
 			t.y = 163.0f + posY;
-			t.accelX = 15.0f * (boonAnime->GetMirror() ? -1 : 1);
+			t.accelX = 15.0f * (anime->GetMirror() ? -1 : 1);
 			tamaList.push_back(t);
 			isBuster = true;
 
@@ -63,16 +63,19 @@ void Boon::Draw()
 		}
 	}
 
+	// Ž©“®‰EƒXƒNƒ[ƒ‹(•bŠÔ100dot)
+	posX += DirectXLib::GetInstance()->GetMove(100);
+
 	// ¶‰EˆÚ“®
 	if (DirectXLib::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
 		posX -= static_cast<long>(MOVE_SPEED);
-		boonAnime->SetMirror(true);
+		anime->SetMirror(true);
 	}
 	else if (DirectXLib::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
 		posX += static_cast<long>(MOVE_SPEED);
-		boonAnime->SetMirror(false);
+		anime->SetMirror(false);
 	}
 
 	// ã‰ºˆÚ“®
@@ -86,7 +89,8 @@ void Boon::Draw()
 	}
 
 	// Ž©‹@•`‰æ
-	boonAnime->Draw(static_cast<int>(posX), 160 + static_cast<int>(posY));
+	D3DXVECTOR2 pos = GetClientPos();
+	anime->Draw(pos.x, pos.y);
 
 	// ’e‚ð•`‰æ
 	list<TamaData>::iterator it;

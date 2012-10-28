@@ -41,6 +41,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="Lib;Game"
+				PreprocessorDefinitions="_DEBUG_"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -209,6 +210,14 @@
 					Name="Enemy"
 					>
 					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyAramaki.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyAramaki.h"
+						>
+					</File>
+					<File
 						RelativePath=".\Game\ObjectManager\Enemy\EnemyFactory.cpp"
 						>
 					</File>
@@ -230,6 +239,14 @@
 					</File>
 					<File
 						RelativePath=".\Game\ObjectManager\Enemy\EnemyObject.h"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyShobonTower.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Enemy\EnemyShobonTower.h"
 						>
 					</File>
 				</Filter>
@@ -266,6 +283,14 @@
 					</File>
 					<File
 						RelativePath=".\Game\ObjectManager\Stage\Stage.h"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Stage\StageManager.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\Game\ObjectManager\Stage\StageManager.h"
 						>
 					</File>
 				</Filter>
@@ -351,6 +376,14 @@
 				>
 				<File
 					RelativePath=".\data\aramaki\aramaki.xml"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="EnemyShobonTower"
+				>
+				<File
+					RelativePath=".\data\EnemyShobonTower\EnemyShobonTower.xml"
 					>
 				</File>
 			</Filter>

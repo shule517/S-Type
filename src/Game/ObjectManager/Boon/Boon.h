@@ -14,6 +14,6 @@ public:
 	void Draw();
 
 private:
-	Anime *boonAnime;
+	Anime *anime;
 	Anime *bulletAnime;
 };

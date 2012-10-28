@@ -28,7 +28,8 @@ public:
 
 public:
 	void Draw(long x, long y);
-	
+	void SpinDraw(long x, long y, float spinSpeed);
+
 	void SetMirror(bool mirror)
 	{
 		isMirror= mirror;

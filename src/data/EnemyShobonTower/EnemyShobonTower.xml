@@ -1,0 +1,145 @@
+﻿<object action="a.lua" animationNum="1">
+	
+	<!--アニメーションの定義-->
+
+	<!--回転(1)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(2)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(3)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(4)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(5)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(6)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(7)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(8)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(9)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+	<!--回転(10)-->
+	<animation id="0">
+		<frame image="data/EnemyShobonTower/ShobonTower10.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower01.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower02.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower03.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower04.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower05.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower06.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower07.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower08.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+		<frame image="data/EnemyShobonTower/ShobonTower09.bmp" gap="10" x="0" y="0" w="64" h="32"/>
+	</animation>
+
+</object>

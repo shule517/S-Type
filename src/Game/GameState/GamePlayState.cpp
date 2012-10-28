@@ -2,6 +2,7 @@
 #include "GamePlayState.h"
 #include <ObjectManager/Enemy/EnemyManager.h>
 #include <ObjectManager/Enemy/EnemyObject.h>
+#include <ObjectManager/Stage/StageManager.h>
 
 /*-------------------------------------------
 	コンストラクタ
@@ -33,7 +34,23 @@ void GamePlayState::Init()
 	// TODO 画面内に敵が入った時に追加する
 	for (long i = 0; i < 10; i++)
 	{
-		EnemyManager::GetInstance()->AddEnemy(OBJECT_ARAMAKI, 120*i, -100*i, i%2);
+		if (i%2 == 0)
+		{
+			EnemyManager::GetInstance()->AddEnemy(OBJECT_ARAMAKI, 800+120*i, -100*i, i%2);
+		}
+		else
+		{
+			EnemyManager::GetInstance()->AddEnemy(OBJECT_SHOBON, 800+120*i, -100*i, i%2);
+		}
+	}
+
+	// ショボンタワー
+	for (long i = 0; i < 20; i++)
+	{
+		for (long j =0; j < 20; j++)
+		{
+			EnemyManager::GetInstance()->AddEnemy(OBJECT_SHOBON, 800 + 100*j, 32*i, i%10);
+		}
 	}
 
 	EnemyManager::GetInstance()->Init();
@@ -66,13 +83,15 @@ bool IsHit(const IObject& a, const IObject& b)
 	return false;
 }
 
-
-
 /*-------------------------------------------
 	移動
---------------------------------------------*/
+------------------------------------ --------*/
 void GamePlayState::Move()
 {
+	// ステージを右にスクロール
+	StageManager::GetInstance()->Move();
+
+
 	boon->Move();
 	EnemyManager::GetInstance()->Move();
 
@@ -184,7 +203,6 @@ void isHitObjectArray(list<Object*> A, list<Object*> B)
 			this->x = boon.x + 30;
 		}
 	}
-
 
 	boon->Move();
 	*/
